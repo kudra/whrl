@@ -1,0 +1,108 @@
+<app-sidebar></app-sidebar>
+<div class="container mt-5">
+  <div class="center-item">
+    <div class="card">
+      <div class="card-header">User KYC Form</div>
+      <div class="card-body">
+        <form [formGroup]="kycform" (ngSubmit)="formSubmit()">
+          <div class="row">
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="usr">First Name</label>
+                <input type="text" formControlName="first_name" class="form-control" id="usr"
+                  placeholder="Enter First Name" [ngClass]="{ 'is-invalid': submitted && frm.first_name.errors }">
+                <div *ngIf="submitted && frm.first_name.errors" class="invalid-feedback">
+                  <div *ngIf="frm.first_name.errors.required">First Name is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="ls">Last Name</label>
+                <input type="text" formControlName="last_name" class="form-control" id="ls"
+                  placeholder="Enter Last Name" [ngClass]="{ 'is-invalid': submitted && frm.last_name.errors }">
+                <div *ngIf="submitted && frm.last_name.errors" class="invalid-feedback">
+                  <div *ngIf="frm.last_name.errors.required">Last Name is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="usr">Email Id</label>
+                <input type="email" formControlName="email_id" class="form-control" id="usr"
+                  placeholder="Enter Email Id" [ngClass]="{ 'is-invalid': submitted && frm.email_id.errors }">
+                <div *ngIf="submitted && frm.email_id.errors" class="invalid-feedback">
+                  <div *ngIf="frm.email_id.errors.required">Last Name is required</div>
+                  <div *ngIf="frm.email_id.errors.email">Email must be a valid email address</div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="ls">Adhar No.</label>
+                <input type="text" formControlName="adhar_no" class="form-control" id="ls" placeholder="Enter Adhar No."
+                  [ngClass]="{ 'is-invalid': submitted && frm.adhar_no.errors }">
+                <div *ngIf="submitted && frm.adhar_no.errors" class="invalid-feedback">
+                  <div *ngIf="frm.adhar_no.errors.required">Adhar number is required</div>
+                  <div *ngIf="frm.adhar_no.errors.pattern">Number must be valid adhar number</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="usr">Mobile No.</label>
+                <input type="tel" formControlName="mobile_no" class="form-control" id="usr"
+                  placeholder="Enter Mobile No." [ngClass]="{ 'is-invalid': submitted && frm.mobile_no.errors }">
+                <div *ngIf="submitted && frm.mobile_no.errors" class="invalid-feedback">
+                  <div *ngIf="frm.mobile_no.errors.required">Mobile number is required</div>
+                  <div *ngIf="frm.mobile_no.errors.pattern">Number must be valid mobile number</div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="ls"> Profile image</label>
+                <input type="file" accept=".png, .jpg, .jpeg" (change)="imgselect($event,'1')"
+                  formControlName="profile_pic" class="form-control" id="ls"
+                  [ngClass]="{ 'is-invalid': submitted && frm.profile_pic.errors }">
+                <div *ngIf="submitted && frm.profile_pic.errors" class="invalid-feedback">
+                  <div *ngIf="frm.profile_pic.errors.required"> Profile image is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="usr">Adhar Front Image</label>
+                <input (change)="imgselect($event,'2')" formControlName="adhar_front_pic" type="file"
+                  class="form-control" id="usr" [ngClass]="{ 'is-invalid': submitted && frm.adhar_front_pic.errors }">
+                <div *ngIf="submitted && frm.adhar_front_pic.errors" class="invalid-feedback">
+                  <div *ngIf="frm.adhar_front_pic.errors.required"> Adhar Front is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <label for="ls">Adhar Back Image</label>
+                <input (change)="imgselect($event,'3')" formControlName="adhar_back_pic" type="file"
+                  class="form-control" id="ls" [ngClass]="{ 'is-invalid': submitted && frm.adhar_back_pic.errors }">
+                <div *ngIf="submitted && frm.adhar_back_pic.errors" class="invalid-feedback">
+                  <div *ngIf="frm.adhar_back_pic.errors.required"> Adhar Front is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <button type="submit"  class="btn btn-primary">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

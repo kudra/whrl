@@ -1,0 +1,23 @@
+.input-group-text,
+.form-control {
+  border-radius: 0;
+  background-color: #fff;
+}
+
+thead {
+  color: #ba7242;
+}
+table{
+    background: #efefef3b;
+    text-align: center;
+}
+table th {
+  border-top: transparent;
+  border-bottom: 1px solid #dee2e6;
+}
+th + th{
+    border-left: 1px solid #dee2e6;
+}
+td + td{
+    border-left: 1px solid #dee2e6;
+}

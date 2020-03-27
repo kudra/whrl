@@ -1,0 +1,20 @@
+<app-sidebar></app-sidebar>
+<div class="container mt-5">
+  <div class="item-center">
+    <div class="card text-center" style="width:400px">
+      <div class="card-header">
+        Login with facebook
+      </div>
+      <div class="card-body">
+        <a routerLink="" *ngIf="!isloggedIn" (click)="facebooklogin()" class="btn btn-block btn-facebook"> <i
+            class="fa fa-facebook-f"></i>&nbsp;&nbsp;Facebook</a>
+        <ng-container *ngIf="isloggedIn">
+          <img src="{{ user.photoUrl }}" width="50%" class="rounded-circle">
+          <h4 class="card-title">{{ user.name }}</h4>
+          <p class="card-text">{{ user.email }}</p>
+          <a routerLink="" class="btn btn-primary" (click)="signOut()">Logout</a>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

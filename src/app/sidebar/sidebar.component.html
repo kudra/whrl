@@ -1,0 +1,15 @@
+<nav id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a routerLink="/sociallogin"><i class="fa fa-twitter" aria-hidden="true"></i>
+    Social Login</a>
+  <a routerLink="/userkyc"><i class="fa fa-user" aria-hidden="true"></i> User KYC</a>
+  <a routerLink="/dashboard"><i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a>
+  <a routerLink="/transaction"><i class="fa fa-exchange" aria-hidden="true"></i>
+    Transaction Page</a>
+</nav>
+<div (click)="openNav()" class="ml-1 sidebar"><i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+  <a routerLink="/sociallogin"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a routerLink="/userkyc"><i class="fa fa-user" aria-hidden="true"></i></a>
+  <a routerLink="/dashboard"><i class="fa fa-dashboard" aria-hidden="true"></i></a>
+  <a routerLink="/transaction"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+</div>
